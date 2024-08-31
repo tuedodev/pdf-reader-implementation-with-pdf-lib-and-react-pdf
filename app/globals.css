@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--form-fields-bg-color: rgb(59, 59, 59);
+	--foreground-rgb: 240, 234, 214;
+	--foreground-rgb-hover: 255, 255, 255;
+	--background-color: linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+	--pdf-width-container: 100px;
+	--slider-thumb-radius: 2rem;
+	--slider-thumb-radius-half: calc(var(--slider-thumb-radius) / 2);
+	--slider-width: calc(100% - var(--slider-thumb-radius));
+	--default-aspect-ratio: 0.70711 / 1;
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: var(--background-color);
+}
+
+input {
+	background-color: var(--form-fields-bg-color);
+}
+
+.slider-bg {
+	background-color: var(--form-fields-bg-color);
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+	/*
+	.covered::before,
+	.covered::after {
+		content: '';
+		position: absolute;
+		width: 9999%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		z-index: 10;
+		background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+	}
+	.covered::before {
+		right: 100%;
+	}
+	.covered::after {
+		left: 100%;
+	}*/
+	.covered {
+		-webkit-clip-path: inset(1px 1px 1px 1px);
+		clip-path: inset(1px 1px 1px 1px);
+	}
+}
