@@ -56,7 +56,7 @@ const Reactpdfviewer: React.FC<Props> = ({ base64string, aspectRatio }) => {
 		<div className={twJoin('h-full flex flex-col justify-center', isFullPage ? 'overflow-hidden' : 'items-center')}>
 			{base64string ? (
 				<>
-					<div className="flex-0 w-[var(--pdf-width-container)] min-w-[180px] relative transition-[width] duration-[50ms]">
+					<div className="flex-0 w-[var(--pdf-width-container)] min-w-[320px] relative transition-[width] duration-[50ms]">
 						<MySlider<number>
 							className="w-full mb-3"
 							value={pageNumber}
