@@ -12,9 +12,15 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 	return (
 		<Slider {...props}>
 			<div className="flex justify-between items-center mb-3">
-				<div className={isFullPage ? 'text-2xl' : 'text-sm'}>
+				<div className="text-sm">
 					<Label>
-						Page<>&nbsp;</>
+						{isFullPage ? (
+							<></>
+						) : (
+							<span>
+								Page<>&nbsp;</>
+							</span>
+						)}
 					</Label>
 					<SliderOutput>
 						{() => (
@@ -39,7 +45,15 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 									}}
 									onSubmit={(e) => e.preventDefault()}
 								/>
-								<>&nbsp;</>of {props.maxValue}
+								{isFullPage ? (
+									<span>
+										<>&nbsp;</>/ {props.maxValue}
+									</span>
+								) : (
+									<span>
+										<>&nbsp;</>of {props.maxValue}
+									</span>
+								)}
 							</form>
 						)}
 					</SliderOutput>
