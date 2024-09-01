@@ -17,10 +17,12 @@ export async function convertPDF(formData: FormData): Promise<ConvertPDFObject |
 			const pageCount = pdfDoc.getPageCount();
 			const pages = pdfDoc.getPages();
 			let aspectRatioFirstPage = '0.70711 / 1';
-			const { width, height } = pages[0].getSize();
+			let { width, height } = pages[0].getSize();
 			/* If first page is landscape, it will be displayed in portrait anyway: */
-			const ratio = height >= width ? width / height : height / width;
-			aspectRatioFirstPage = `${ratio.toString().slice(0, 7)} / 1`;
+			if (width && height) {
+				const ratio = height >= width ? width / height : height / width;
+				aspectRatioFirstPage = `${ratio.toString().slice(0, 7)} / 1`;
+			}
 			let base64string: string | null = null;
 			for (let i = 0; i < pageCount; i++) {
 				if (i >= publicpages) {
@@ -31,6 +33,7 @@ export async function convertPDF(formData: FormData): Promise<ConvertPDFObject |
 			base64string = await pdfDoc.saveAsBase64({ dataUri: true });
 			resolve({ base64string, aspectRatio: aspectRatioFirstPage });
 		} catch (error) {
+			console.log(error);
 			resolve(null);
 		}
 	});
