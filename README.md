@@ -1,16 +1,21 @@
 # Next.js PDF Reader Implementation with pdf-lib and react-pdf
 
-[...]
+PDF Reader implementation for the Next.js framework using the PDF libraries pdf-lib (for reading the PDF and converting it into a bytestream) and react-pdf (for displaying the PDF document on the screen).
+
 ![Screenshot](./public/_screenshot1.jpg)
+
+In normal mode, the PDF automatically adapts to the viewport (taking the aspect ratio into account); in full-screen mode, the PDF is enlarged to the available screen width and the page can be scrolled upwards.
+
 ![Screenshot](./public/_screenshot2.jpg)
 
-## Features
-
-[...]
+The React component library react-aria is used to open the PDF file on the device and to move the mouse or pointer.
 
 ## Tech Stack
 
 - Next.js@14.2
+- [pdf-lib](https://pdf-lib.js.org/)
+- [react-pdf](https://react-pdf.org/)
+- [react-aria](https://react-spectrum.adobe.com/react-aria/)
 - Tailwind CSS
 
 ## Demo version deployed ...
@@ -35,7 +40,7 @@ export const MOVEMENT_VELOCITY = 0.5;
 /* Specifies the vertical acceleration factor of the mouse or pointer when sliding the pages. Value between 0 and 
 1. A lower value slows down the acceleration, a higher value speeds it up.*/
 
-export const MOVEMENT_THRESHOLD = 2;
+export const MOVEMENT_THRESHOLD = 1;
 /* Specifies the threshold in pixels that the mouse or pointer must move in order to trigger a slide.*/
 ```
 
