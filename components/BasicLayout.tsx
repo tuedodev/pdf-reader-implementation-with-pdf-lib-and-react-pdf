@@ -6,7 +6,7 @@ import { convertPDF } from '@/lib/actions';
 import { MAXIMAL_NUMBER_OF_PUBLIC_PAGES } from '@/lib/constants';
 import { FileTrigger, Button } from 'react-aria-components';
 import FileUploadIcon from './icons/FileUploadIcon';
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twJoin } from 'tailwind-merge';
 import Reactpdfviewer from './Reactpdfviewer';
 import Collapsable from './Collapsable';
 import { usePDFDocument } from './PDFDocumentProvider';
@@ -71,7 +71,7 @@ const BasicLayout: React.FC = () => {
 			</Collapsable>
 			<main
 				ref={currentFullPageRef}
-				className={twMerge(
+				className={twJoin(
 					'flex-1 flex flex-col',
 					isPending ? 'justify-center' : 'justify-stretch',
 					isFullPage ? '' : 'overflow-hidden'
