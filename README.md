@@ -8,7 +8,7 @@ In normal mode, the PDF automatically adapts to the viewport (taking the aspect 
 
 ![Screenshot](./public/_screenshot2.jpg)
 
-The React component library react-aria is used to open the PDF file on the device and to move the mouse or pointer.
+The React component library react-aria is used to open the PDF file on the device and to move the mouse or pointer. After loading the website, you can click on the upload button and (for the purpose of illustration) upload a PDF from the device to the page. In the real world, the PDF page would actually be retrieved by a content provider.
 
 ## Tech Stack
 
