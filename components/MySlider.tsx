@@ -11,7 +11,7 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 
 	return (
 		<Slider {...props}>
-			<div className="flex justify-between items-center mb-3">
+			<div className="flex justify-between items-center mb-3 mx-1">
 				<div className="text-sm">
 					<Label>
 						{isFullPage ? (
