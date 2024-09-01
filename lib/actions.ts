@@ -18,10 +18,12 @@ export async function convertPDF(formData: FormData): Promise<ConvertPDFObject |
 			const pages = pdfDoc.getPages();
 			let aspectRatioFirstPage = '0.70711 / 1';
 			let { width, height } = pages[0].getSize();
-			/* If first page is landscape, it will be displayed in portrait anyway: */
 			if (width && height) {
+				/* If first page is landscape, it will be displayed in portrait anyway: */
 				const ratio = height >= width ? width / height : height / width;
 				aspectRatioFirstPage = `${ratio.toString().slice(0, 7)} / 1`;
+			} else {
+				throw new Error('Invalid values for width or height.');
 			}
 			let base64string: string | null = null;
 			for (let i = 0; i < pageCount; i++) {
