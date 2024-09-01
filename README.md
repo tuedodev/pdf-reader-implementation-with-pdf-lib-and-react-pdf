@@ -15,7 +15,7 @@
 
 ## Demo version deployed ...
 
-A demo version is deployed on [Link](https://.../)
+A demo version is deployed on Stackblitz [Link](https://stackblitz.com/~/github.com/tuedodev/pdf-reader-implementation-with-pdf-lib-and-react-pdf)
 
 ## Getting Started
 
