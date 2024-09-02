@@ -31,26 +31,6 @@ input {
 	.text-balance {
 		text-wrap: balance;
 	}
-	/*
-	.covered::before,
-	.covered::after {
-		content: '';
-		position: absolute;
-		width: 9999%;
-		height: 100%;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		pointer-events: none;
-		z-index: 10;
-		background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-	}
-	.covered::before {
-		right: 100%;
-	}
-	.covered::after {
-		left: 100%;
-	}*/
 	.covered {
 		-webkit-clip-path: inset(1px 1px 1px 1px);
 		clip-path: inset(1px 1px 1px 1px);
