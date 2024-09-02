@@ -18,9 +18,9 @@ The React component library react-aria is used to open the PDF file on the devic
 - [react-aria](https://react-spectrum.adobe.com/react-aria/)
 - Tailwind CSS
 
-## Demo version deployed ...
+## Demo version deployed on a WebContainer in Stackblitz
 
-A demo version is deployed on Stackblitz [Link](https://stackblitz.com/~/github.com/tuedodev/pdf-reader-implementation-with-pdf-lib-and-react-pdf)
+A demo version is deployed on Stackblitz [Link](https://stackblitz.com/~/github.com/tuedodev/pdf-reader-implementation-with-pdf-lib-and-react-pdf?file=README.md). Click on the upload button, load a PDF file from your gadget and you are good to go.
 
 ## Getting Started
 
