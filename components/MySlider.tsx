@@ -82,7 +82,7 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 					</>
 				)}
 			</SliderTrack>
-			<div className="text-xs text-center leading-[0.75rem] w-[var(--slider-width)] mt-2 text-ellipsis overflow-hidden whitespace-nowrap mx-auto">
+			<div className="text-xs text-center leading-[0.75rem] w-[var(--pdf-width-container)] mt-2 text-ellipsis overflow-hidden whitespace-nowrap mx-auto">
 				{filename}
 			</div>
 		</Slider>
