@@ -11,7 +11,7 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 
 	return (
 		<Slider {...props}>
-			<div className="flex justify-between items-center mb-3 mx-1">
+			<div className="flex justify-between items-center mx-1">
 				<div className="text-sm">
 					<Label>
 						{isFullPage ? (
@@ -58,11 +58,6 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 						)}
 					</SliderOutput>
 				</div>
-				<div className="inline text-xs leading-[0.75rem] mx-4">
-					{`${filename.split('.')[0].trim().slice(0, 20)}${
-						filename.split('.')[0].length > 20 ? '[...]' : ''
-					}.${filename.slice(-3)}`}
-				</div>
 				<Button
 					onPress={(e) => setIsFullPage(!isFullPage)}
 					autoFocus={false}
@@ -87,6 +82,9 @@ export function MySlider<T extends number | number[]>(props: SliderProps<T> & Re
 					</>
 				)}
 			</SliderTrack>
+			<div className="text-xs text-center leading-[0.75rem] w-[var(--slider-width)] mt-2 text-ellipsis overflow-hidden whitespace-nowrap mx-auto">
+				{filename}
+			</div>
 		</Slider>
 	);
 }
