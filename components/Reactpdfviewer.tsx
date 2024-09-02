@@ -23,17 +23,16 @@ const Reactpdfviewer: React.FC<Props> = ({ base64string, aspectRatio }) => {
 	const { fullPageRef, isFullPage, setWidth, setFullPageWidth, setSliderThumbRadius } = useFullPage();
 	const { setPageNumber, setNumPages, numPages, pageNumber } = usePDFDocument();
 
+	/* determines the acceptable width of the PDF document */
 	useResizeObserver(standardPageRef, (entry) => {
 		const { width } = entry?.contentRect;
 		setWidth(width);
 		if (typeof document.documentElement !== 'undefined') {
-			document.documentElement.style.setProperty(
-				'--pdf-width-container',
-				`${width}px` // `calc(${width}px - ${sliderThumbRadius} * 0)`
-			);
+			document.documentElement.style.setProperty('--pdf-width-container', `${width}px`);
 		}
 	});
 
+	/* determines the width of viewport for full page */
 	useResizeObserver(fullPageRef, (entry) => {
 		const { width } = entry?.contentRect;
 		if (isFullPage) {
